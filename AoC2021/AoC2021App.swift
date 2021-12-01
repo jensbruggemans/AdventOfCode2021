@@ -11,7 +11,8 @@ import SwiftUI
 struct AoC2021App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let depths = InputHelper.floatArray(forDay: 1)
+            SonarSweepView(depths: depths)
         }
     }
 }
