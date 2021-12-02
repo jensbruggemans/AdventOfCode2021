@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct InputHelper {
     static func stringArray(forDay day: Int) -> [String] {
         let filePath = Bundle.main.path(forResource: "day\(day)", ofType: "txt")!
         let string = try! String(contentsOfFile: filePath)
-        return string.components(separatedBy: CharacterSet.whitespacesAndNewlines)
+        return string.components(separatedBy: CharacterSet.newlines)
     }
     
     static func intArray(forDay day: Int) -> [Int] {

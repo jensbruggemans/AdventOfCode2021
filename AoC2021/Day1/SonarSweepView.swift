@@ -22,16 +22,15 @@ struct SonarSweepView: View {
     }
     
     var body: some View {
-        VStack(spacing: 20) {
-            DepthGraph(depths: depths, amountOfDeclines: amountOfDeclines)
-            DepthGraph(depths: groupedDepths, amountOfDeclines: amountOfGroupedDeclines)
-        }.padding(20)
+        VStack {
+            DepthGraph(depths: depths).overlay(TextOverlay(text: "Part 1: \(amountOfDeclines)"), alignment: .bottomLeading)
+            DepthGraph(depths: groupedDepths).overlay(TextOverlay(text: "Part 2: \(amountOfGroupedDeclines)"), alignment: .bottomLeading)
+        }
     }
 }
 
 struct DepthGraph: View {
     let depths: [CGFloat]
-    let amountOfDeclines: Int
     
     var body: some View {
         let gradient = Gradient(stops:[
@@ -45,7 +44,6 @@ struct DepthGraph: View {
         DepthShape(depths: depths)
             .fill(LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom))
             .background(Color(hex: "362204"))
-            .overlay(TextOverlay(text: "Amount of declines: \(amountOfDeclines)"), alignment: .bottomLeading)
     }
 }
 
