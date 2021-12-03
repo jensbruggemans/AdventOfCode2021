@@ -11,7 +11,7 @@ import SwiftUI
 struct InputHelper {
     static func stringArray(forDay day: Int) -> [String] {
         let filePath = Bundle.main.path(forResource: "day\(day)", ofType: "txt")!
-        let string = try! String(contentsOfFile: filePath)
+        let string = try! String(contentsOfFile: filePath).trimmingCharacters(in: .whitespacesAndNewlines)
         return string.components(separatedBy: CharacterSet.newlines)
     }
     
