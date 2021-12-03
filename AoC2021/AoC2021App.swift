@@ -101,8 +101,7 @@ struct DaysList: View {
                     let problem = problems[index]
                     NavigationLink {
                         problem.solutionView
-                            .navigationBarTitle("")
-                            .navigationBarHidden(true)
+                            .navigationBarTitle(problem.title)
                     } label: {
                         Text(problem.title)
                     }

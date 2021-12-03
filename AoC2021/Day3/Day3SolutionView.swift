@@ -26,19 +26,24 @@ struct Day3SolutionView: View {
     
     var body: some View {
         let timer = Timer.publish(every: 0.1, on: .current, in: .common).autoconnect()
-        BitArraysDisplay(bitArrays: readingsToDisplay)
-        HStack{
-            DialView(value: gammaValue, centerText: String(format: "%04d", gammaRate), bottomText: "γ")
-            DialView(value: epsilonValue, centerText: String(format: "%04d", epsilonRate), bottomText: "ε")
-            DialView(value: oxygenGeneratorValue, centerText: String(format: "%04d", oxygenGeneratorRating), bottomText: "O²")
-            DialView(value: co2ScrubberValue, centerText: String(format: "%04d", co2ScrubberRating), bottomText: "CO²").onReceive(timer) {_ in
-                guard currentWindowStart + windowSize < readings.count else {
-                    timer.upstream.connect().cancel()
-                    return
-                }
-                currentWindowStart += 1
-                update()
+        VStack {
+            BitArraysDisplay(bitArrays: readingsToDisplay).frame(width: 300, height: 300).foregroundColor(.blue)
+            HStack {
+                DialView(value: gammaValue, centerText: String(format: "%04d", gammaRate), bottomText: "γ").frame(width: 150, height: 150)
+                DialView(value: epsilonValue, centerText: String(format: "%04d", epsilonRate), bottomText: "ε").frame(width: 150, height: 150)
             }
+            HStack {
+                DialView(value: oxygenGeneratorValue, centerText: String(format: "%04d", oxygenGeneratorRating), bottomText: "O²").frame(width: 150, height: 150)
+                DialView(value: co2ScrubberValue, centerText: String(format: "%04d", co2ScrubberRating), bottomText: "CO²").frame(width: 150, height: 150)
+                
+            }
+        }.onReceive(timer) {_ in
+            guard currentWindowStart + windowSize < readings.count else {
+                timer.upstream.connect().cancel()
+                return
+            }
+            currentWindowStart += 1
+            update()
         }
     }
     func update() {
@@ -74,7 +79,7 @@ struct BitArraysDisplay: Shape {
                     let x = columnSize * CGFloat(column) + columnSize * 0.1
                     let y = rowSize * CGFloat(row) + rowSize * 0.1
                     let rect = CGRect(x: x, y: y, width: columnSize * 0.8, height: rowSize * 0.8)
-                    path.addRect(rect)
+                    path.addRoundedRect(in: rect, cornerSize: CGSize(width: 5, height: 5))
                 }
             }
         }
@@ -102,11 +107,12 @@ struct DialView: View {
             let minWH = min(geo.size.width, geo.size.height)
             let centerFontSize = minWH / 4.5
             let bottomFontSize = minWH / 5
-            ArcShape(value: 1, lineWidthScale: 1)
-                .overlay(ArcShape(value: value, lineWidthScale: 0.7).fill(.green))
-                .overlay(Text(centerText).font(.system(size: centerFontSize, weight: .bold, design: .monospaced)))
+            ZStack {
+                ArcShape(value: 1, lineWidthScale: 1)
+                ArcShape(value: value, lineWidthScale: 0.7).fill(.blue)
+                Text(centerText).font(.system(size: centerFontSize, weight: .bold, design: .monospaced))
+            }.aspectRatio(1, contentMode: .fit)
                 .overlay(Text(bottomText).font(.system(size: bottomFontSize, weight: .bold, design: .monospaced)), alignment: .bottom)
-                .aspectRatio(1, contentMode: .fit)
         }
     }
 }

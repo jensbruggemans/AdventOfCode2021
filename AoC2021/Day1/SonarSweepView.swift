@@ -43,7 +43,7 @@ struct DepthGraph: View {
             Gradient.Stop(color: Color(hex: "020A34"), location: 1)])
         DepthShape(depths: depths)
             .fill(LinearGradient(gradient: gradient, startPoint: .top, endPoint: .bottom))
-            .background(Color(hex: "362204"))
+            .background(Color(hex: "362204")).clipped()
     }
 }
 
