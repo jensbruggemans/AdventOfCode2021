@@ -8,11 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct Day3: Problem {
+struct Day3: Solution {
     let title: String = "Day 3"
     let readings = InputHelper.bitArrays(forDay: 3)
     
-    var solutionView: AnyView {
+    var view: AnyView {
         return AnyView(Day3SolutionView(readings: readings))
     }
 }

@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct Day4: Problem {
+struct Day4: Solution {
     let title: String = "Day 4"
     
-    var solutionView: AnyView {
+    var view: AnyView {
         let inputLines = InputHelper.stringArray(forDay: 4)
         let numbersToDraw = inputLines[0].components(separatedBy: ",").map{ Int($0)! }
         let boardsInputLines = inputLines[1..<inputLines.count]

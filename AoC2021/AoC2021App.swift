@@ -11,25 +11,25 @@ import SwiftUI
 struct AoC2021App: App {
     var body: some Scene {
         WindowGroup {
-            DaysList(problems: [Day1(), Day2(), Day3(), Day4()])
+            DaysList(problems: [Day1(), Day2(), Day3(), Day4(), Day5()])
         }
     }
 }
 
-protocol Problem {
+protocol Solution {
     var title: String { get }
-    var solutionView: AnyView { get }
+    var view: AnyView { get }
 }
 
-struct Day1: Problem {
+struct Day1: Solution {
     let title: String = "Day 1"
     let depths = InputHelper.floatArray(forDay: 1)
-    var solutionView: AnyView {
+    var view: AnyView {
         return AnyView(SonarSweepView(depths: depths))
     }
 }
 
-struct Day2: Problem {
+struct Day2: Solution {
     let title: String = "Day 2"
     let depths = InputHelper.floatArray(forDay: 1)
     let solutionText: String
@@ -85,14 +85,14 @@ struct Day2: Problem {
         self.path2 = path2
     }
     
-    var solutionView: AnyView {
+    var view: AnyView {
         return AnyView(DivePathView(paths: [path1, path2], solutionText: solutionText))
     }
 }
 
 struct DaysList: View {
     
-    let problems: [Problem]
+    let problems: [Solution]
     
     var body: some View {
         NavigationView {
@@ -100,7 +100,7 @@ struct DaysList: View {
                 ForEach(0..<problems.count, id: \.self) { index in
                     let problem = problems[index]
                     NavigationLink {
-                        problem.solutionView
+                        problem.view
                             .navigationBarTitle(problem.title)
                     } label: {
                         Text(problem.title)

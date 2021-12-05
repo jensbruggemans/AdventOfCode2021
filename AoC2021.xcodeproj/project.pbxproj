@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B409F3ED275CD9F000AB5E85 /* day5.txt in Resources */ = {isa = PBXBuildFile; fileRef = B409F3EC275CD9F000AB5E85 /* day5.txt */; };
+		B409F3F0275CDA6100AB5E85 /* Day5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409F3EF275CDA6100AB5E85 /* Day5.swift */; };
+		B409F3F2275CEA6500AB5E85 /* ThermalVentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409F3F1275CEA6500AB5E85 /* ThermalVentsView.swift */; };
+		B409F3F4275CF1FC00AB5E85 /* Day5SolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409F3F3275CF1FC00AB5E85 /* Day5SolutionView.swift */; };
+		B409F3F7275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B409F3F5275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift */; };
+		B409F3F8275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B409F3F6275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib */; };
 		B422A4B727580AB200AD5512 /* AoC2021App.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4B627580AB200AD5512 /* AoC2021App.swift */; };
 		B422A4BB27580AB300AD5512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B422A4BA27580AB300AD5512 /* Assets.xcassets */; };
 		B422A4BE27580AB300AD5512 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B422A4BD27580AB300AD5512 /* Preview Assets.xcassets */; };
@@ -27,6 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B409F3EC275CD9F000AB5E85 /* day5.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day5.txt; sourceTree = "<group>"; };
+		B409F3EF275CDA6100AB5E85 /* Day5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5.swift; sourceTree = "<group>"; };
+		B409F3F1275CEA6500AB5E85 /* ThermalVentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalVentsView.swift; sourceTree = "<group>"; };
+		B409F3F3275CF1FC00AB5E85 /* Day5SolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5SolutionView.swift; sourceTree = "<group>"; };
+		B409F3F5275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalVentCollectionViewCell.swift; sourceTree = "<group>"; };
+		B409F3F6275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThermalVentCollectionViewCell.xib; sourceTree = "<group>"; };
 		B422A4B327580AB200AD5512 /* AoC2021.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AoC2021.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B422A4B627580AB200AD5512 /* AoC2021App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AoC2021App.swift; sourceTree = "<group>"; };
 		B422A4BA27580AB300AD5512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +71,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B409F3EE275CDA4200AB5E85 /* Day5 */ = {
+			isa = PBXGroup;
+			children = (
+				B409F3EF275CDA6100AB5E85 /* Day5.swift */,
+				B409F3F1275CEA6500AB5E85 /* ThermalVentsView.swift */,
+				B409F3F3275CF1FC00AB5E85 /* Day5SolutionView.swift */,
+				B409F3F5275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift */,
+				B409F3F6275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib */,
+			);
+			path = Day5;
+			sourceTree = "<group>";
+		};
 		B422A4AA27580AB200AD5512 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +108,7 @@
 				B4DA09222758D3DF006CBB8A /* Day2 */,
 				B4DA0927275A672D006CBB8A /* Day3 */,
 				B4DA0930275BE0A4006CBB8A /* Day4 */,
+				B409F3EE275CDA4200AB5E85 /* Day5 */,
 				B422A4C427580AB900AD5512 /* AoC2021.entitlements */,
 				B422A4B627580AB200AD5512 /* AoC2021App.swift */,
 				B422A4BA27580AB300AD5512 /* Assets.xcassets */,
@@ -125,6 +150,7 @@
 				B4DA09202758D3C4006CBB8A /* day2.txt */,
 				B4DA0928275A6788006CBB8A /* day3.txt */,
 				B4DA092E275BE07E006CBB8A /* day4.txt */,
+				B409F3EC275CD9F000AB5E85 /* day5.txt */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -214,7 +240,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B409F3ED275CD9F000AB5E85 /* day5.txt in Resources */,
 				B422A4BE27580AB300AD5512 /* Preview Assets.xcassets in Resources */,
+				B409F3F8275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib in Resources */,
 				B422A4C9275811F200AD5512 /* day1.txt in Resources */,
 				B4DA09212758D3C4006CBB8A /* day2.txt in Resources */,
 				B422A4BB27580AB300AD5512 /* Assets.xcassets in Resources */,
@@ -230,10 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B409F3F2275CEA6500AB5E85 /* ThermalVentsView.swift in Sources */,
 				B422A4C727580B6200AD5512 /* SonarSweepView.swift in Sources */,
 				B4DA0932275BE0C2006CBB8A /* Day4.swift in Sources */,
 				B4DA09242758D410006CBB8A /* CourseEntry.swift in Sources */,
 				B422A4CD27582AF500AD5512 /* ColorExtensions.swift in Sources */,
+				B409F3F7275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift in Sources */,
+				B409F3F0275CDA6100AB5E85 /* Day5.swift in Sources */,
+				B409F3F4275CF1FC00AB5E85 /* Day5SolutionView.swift in Sources */,
 				B4DA0934275BF036006CBB8A /* Day4SolutionView.swift in Sources */,
 				B422A4B727580AB200AD5512 /* AoC2021App.swift in Sources */,
 				B4DA092627596C46006CBB8A /* DivePathView.swift in Sources */,
