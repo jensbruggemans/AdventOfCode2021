@@ -77,6 +77,17 @@ struct BingoCardView: View {
     }
 }
 
+struct BingoCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        BingoCardView(numbers: [[1,2,3,4,5],
+                                [6,7,8,9,10],
+                                [11,12,13,14,15],
+                                [16,17,18,19,20],
+                                [21,22,23,24,25]],
+                      markedNumbers: Set([11,22,13,2,5])).frame(width: 150, height: 150, alignment: .center)
+    }
+}
+
 struct NumbersView: View {
     let markedNumbers: Set<Int>
     private let gridItemLayout = [GridItem].init(repeating: GridItem(.flexible()), count: 10)

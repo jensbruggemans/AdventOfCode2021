@@ -21,6 +21,8 @@
 		B422A4CB2758253B00AD5512 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CA2758253B00AD5512 /* ArrayExtensions.swift */; };
 		B422A4CD27582AF500AD5512 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CC27582AF500AD5512 /* ColorExtensions.swift */; };
 		B422A4CF27582D8200AD5512 /* InputHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CE27582D8200AD5512 /* InputHelper.swift */; };
+		B4AE9E63275DFA190083E083 /* day6.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4AE9E62275DFA190083E083 /* day6.txt */; };
+		B4AE9E65275DFA320083E083 /* Day6.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE9E64275DFA320083E083 /* Day6.swift */; };
 		B4DA09212758D3C4006CBB8A /* day2.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4DA09202758D3C4006CBB8A /* day2.txt */; };
 		B4DA09242758D410006CBB8A /* CourseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA09232758D410006CBB8A /* CourseEntry.swift */; };
 		B4DA092627596C46006CBB8A /* DivePathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA092527596C46006CBB8A /* DivePathView.swift */; };
@@ -49,6 +51,8 @@
 		B422A4CA2758253B00AD5512 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		B422A4CC27582AF500AD5512 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		B422A4CE27582D8200AD5512 /* InputHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHelper.swift; sourceTree = "<group>"; };
+		B4AE9E62275DFA190083E083 /* day6.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day6.txt; sourceTree = "<group>"; };
+		B4AE9E64275DFA320083E083 /* Day6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day6.swift; sourceTree = "<group>"; };
 		B4DA09202758D3C4006CBB8A /* day2.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day2.txt; sourceTree = "<group>"; };
 		B4DA09232758D410006CBB8A /* CourseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseEntry.swift; sourceTree = "<group>"; };
 		B4DA092527596C46006CBB8A /* DivePathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivePathView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 		B422A4B527580AB200AD5512 /* AoC2021 */ = {
 			isa = PBXGroup;
 			children = (
+				B4AE9E61275DFA020083E083 /* Day6 */,
 				B422A4D127582EFC00AD5512 /* Inputs */,
 				B422A4D027582EC100AD5512 /* Helpers */,
 				B422A4C527580AC400AD5512 /* Day1 */,
@@ -151,8 +156,17 @@
 				B4DA0928275A6788006CBB8A /* day3.txt */,
 				B4DA092E275BE07E006CBB8A /* day4.txt */,
 				B409F3EC275CD9F000AB5E85 /* day5.txt */,
+				B4AE9E62275DFA190083E083 /* day6.txt */,
 			);
 			path = Inputs;
+			sourceTree = "<group>";
+		};
+		B4AE9E61275DFA020083E083 /* Day6 */ = {
+			isa = PBXGroup;
+			children = (
+				B4AE9E64275DFA320083E083 /* Day6.swift */,
+			);
+			path = Day6;
 			sourceTree = "<group>";
 		};
 		B4DA09222758D3DF006CBB8A /* Day2 */ = {
@@ -247,6 +261,7 @@
 				B4DA09212758D3C4006CBB8A /* day2.txt in Resources */,
 				B422A4BB27580AB300AD5512 /* Assets.xcassets in Resources */,
 				B4DA092F275BE07E006CBB8A /* day4.txt in Resources */,
+				B4AE9E63275DFA190083E083 /* day6.txt in Resources */,
 				B4DA0929275A6788006CBB8A /* day3.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +280,7 @@
 				B422A4CD27582AF500AD5512 /* ColorExtensions.swift in Sources */,
 				B409F3F7275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift in Sources */,
 				B409F3F0275CDA6100AB5E85 /* Day5.swift in Sources */,
+				B4AE9E65275DFA320083E083 /* Day6.swift in Sources */,
 				B409F3F4275CF1FC00AB5E85 /* Day5SolutionView.swift in Sources */,
 				B4DA0934275BF036006CBB8A /* Day4SolutionView.swift in Sources */,
 				B422A4B727580AB200AD5512 /* AoC2021App.swift in Sources */,
