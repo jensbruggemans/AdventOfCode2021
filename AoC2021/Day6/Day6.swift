@@ -22,7 +22,7 @@ struct Day6: Solution {
     }
     
     var view: AnyView {
-        return AnyView(Text("day 6 part 1: \(fishSchool.spawn(numberOfTimes: 80).size)\nday 6 part 2: \(fishSchool.spawn(numberOfTimes: 256).size)"))
+        return AnyView(Day6SolutionView(initialSchool: fishSchool))
     }
 }
 
