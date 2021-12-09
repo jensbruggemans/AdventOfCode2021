@@ -13,17 +13,19 @@ struct Day8: Solution {
     let part1: Int
     let part2: Int
     
+    let displayPuzzles: [DisplayPuzzle]
+    
     init() {
         let displayArrays = InputHelper.stringArray(forDay: 8).map{ $0.components(separatedBy: CharacterSet(charactersIn: "| ")).filter{ !$0.isEmpty }.map{ Display(reading: $0) } }
-        let displayPuzzles = displayArrays.map{ DisplayPuzzle(signals: Array($0[0...9]), displays: Array($0[10...13])) }
-        part1 = displayPuzzles.reduce(0) { $0 + $1.displays.filter{ [2,3,4,7].contains($0.numberOfActiveSegments) }.count }
-        part2 = displayPuzzles.reduce(0) {
+        displayPuzzles = displayArrays.map{ DisplayPuzzle(signals: Array($0[0...9]), displays: Array($0[10...13])) }
+        part1 = 0//displayPuzzles.reduce(0) { $0 + $1.displays.filter{ [2,3,4,7].contains($0.numberOfActiveSegments) }.count }
+        part2 = displayPuzzles[1].solve()!/*displayPuzzles.reduce(0) {
             $0 + $1.solve()!
-        }
+        }*/
     }
     
     var view: AnyView {
-        return AnyView(Text("\(part1)\n\(part2)"))
+        return AnyView(Day8SolutionView(puzzle: displayPuzzles[0]))
     }
 }
 
@@ -74,6 +76,16 @@ struct DisplayPuzzle {
     static let allMappings = Set(0...6).allPossibleArrays
     let signals: [Display]
     let displays: [Display]
+    func correctMapping() -> [Int]? {
+        for mapping in DisplayPuzzle.allMappings {
+            let signalNumbers = Set(signals.compactMap{ $0.toValue(withMapping: mapping )})
+            let displayNumbers = displays.compactMap{ $0.toValue(withMapping: mapping )}
+            if signalNumbers.count == 10 && displayNumbers.count == 4 {
+                return mapping
+            }
+        }
+        return nil
+    }
     func solve() -> Int? {
         for mapping in DisplayPuzzle.allMappings {
             let signalNumbers = Set(signals.compactMap{ $0.toValue(withMapping: mapping )})

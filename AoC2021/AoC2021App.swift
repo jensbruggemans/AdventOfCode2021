@@ -11,7 +11,7 @@ import SwiftUI
 struct AoC2021App: App {
     var body: some Scene {
         WindowGroup {
-            DaysList(problems: [Day1()])//, Day2(), Day3(), Day4(), Day5(), Day6(), Day7(), Day8()])
+            DaysList(problems: [Day9()])
         }
     }
 }
