@@ -16,7 +16,7 @@ struct Day9: Solution {
     init() {
         let values = InputHelper.stringArray(forDay: 9).map { $0.map{ Int("\($0)")! } }
         part1 = values.lowPoints.reduce(0) { $0 + values[$1.x][$1.y] + 1 }
-        part2 = values.basins.map() { $0.count }.sorted { $0 > $1 }[0..<3].reduce(1, *)
+        part2 = values.basins.map { $0.count }.sorted { $0 > $1 }[0..<3].reduce(1, *)
     }
     
     var view: AnyView {

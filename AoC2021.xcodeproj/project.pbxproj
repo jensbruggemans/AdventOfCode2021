@@ -21,6 +21,8 @@
 		B422A4CB2758253B00AD5512 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CA2758253B00AD5512 /* ArrayExtensions.swift */; };
 		B422A4CD27582AF500AD5512 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CC27582AF500AD5512 /* ColorExtensions.swift */; };
 		B422A4CF27582D8200AD5512 /* InputHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CE27582D8200AD5512 /* InputHelper.swift */; };
+		B4268EDC2763F491004672ED /* day10.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4268EDB2763F491004672ED /* day10.txt */; };
+		B4268EDF2763F4BA004672ED /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4268EDE2763F4BA004672ED /* Day10.swift */; };
 		B456C3D7276130E700645B64 /* day8.txt in Resources */ = {isa = PBXBuildFile; fileRef = B456C3D6276130E700645B64 /* day8.txt */; };
 		B456C3DA2761312400645B64 /* Day8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456C3D92761312400645B64 /* Day8.swift */; };
 		B456C3DC276142F700645B64 /* Day8SolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B456C3DB276142F700645B64 /* Day8SolutionView.swift */; };
@@ -60,6 +62,8 @@
 		B422A4CA2758253B00AD5512 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		B422A4CC27582AF500AD5512 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		B422A4CE27582D8200AD5512 /* InputHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHelper.swift; sourceTree = "<group>"; };
+		B4268EDB2763F491004672ED /* day10.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day10.txt; sourceTree = "<group>"; };
+		B4268EDE2763F4BA004672ED /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
 		B456C3D6276130E700645B64 /* day8.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day8.txt; sourceTree = "<group>"; };
 		B456C3D92761312400645B64 /* Day8.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8.swift; sourceTree = "<group>"; };
 		B456C3DB276142F700645B64 /* Day8SolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day8SolutionView.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				B4AE9E68275F4D070083E083 /* Day7 */,
 				B456C3D8276130FF00645B64 /* Day8 */,
 				B4FF467B2762A08600F464DA /* Day9 */,
+				B4268EDD2763F4AA004672ED /* Day10 */,
 				B422A4C427580AB900AD5512 /* AoC2021.entitlements */,
 				B422A4B627580AB200AD5512 /* AoC2021App.swift */,
 				B422A4BA27580AB300AD5512 /* Assets.xcassets */,
@@ -181,8 +186,17 @@
 				B4AE9E6B275F4D6F0083E083 /* day7.txt */,
 				B456C3D6276130E700645B64 /* day8.txt */,
 				B4FF46792762A07500F464DA /* day9.txt */,
+				B4268EDB2763F491004672ED /* day10.txt */,
 			);
 			path = Inputs;
+			sourceTree = "<group>";
+		};
+		B4268EDD2763F4AA004672ED /* Day10 */ = {
+			isa = PBXGroup;
+			children = (
+				B4268EDE2763F4BA004672ED /* Day10.swift */,
+			);
+			path = Day10;
 			sourceTree = "<group>";
 		};
 		B456C3D8276130FF00645B64 /* Day8 */ = {
@@ -315,6 +329,7 @@
 				B4AE9E6C275F4D6F0083E083 /* day7.txt in Resources */,
 				B422A4BB27580AB300AD5512 /* Assets.xcassets in Resources */,
 				B4DA092F275BE07E006CBB8A /* day4.txt in Resources */,
+				B4268EDC2763F491004672ED /* day10.txt in Resources */,
 				B4AE9E63275DFA190083E083 /* day6.txt in Resources */,
 				B4DA0929275A6788006CBB8A /* day3.txt in Resources */,
 			);
@@ -343,6 +358,7 @@
 				B456C3DA2761312400645B64 /* Day8.swift in Sources */,
 				B4AE9E67275EA4580083E083 /* Day6SolutionView.swift in Sources */,
 				B422A4B727580AB200AD5512 /* AoC2021App.swift in Sources */,
+				B4268EDF2763F4BA004672ED /* Day10.swift in Sources */,
 				B4DA092627596C46006CBB8A /* DivePathView.swift in Sources */,
 				B422A4CB2758253B00AD5512 /* ArrayExtensions.swift in Sources */,
 				B4DA092B275A736A006CBB8A /* Day3.swift in Sources */,
