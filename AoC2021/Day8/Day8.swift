@@ -16,103 +16,88 @@ struct Day8: Solution {
     let displayPuzzles: [DisplayPuzzle]
     
     init() {
-        let displayArrays = InputHelper.stringArray(forDay: 8).map{ $0.components(separatedBy: CharacterSet(charactersIn: "| ")).filter{ !$0.isEmpty }.map{ Display(reading: $0) } }
-        displayPuzzles = displayArrays.map{ DisplayPuzzle(signals: Array($0[0...9]), displays: Array($0[10...13])) }
-        part1 = 0//displayPuzzles.reduce(0) { $0 + $1.displays.filter{ [2,3,4,7].contains($0.numberOfActiveSegments) }.count }
-        part2 = displayPuzzles[1].solve()!/*displayPuzzles.reduce(0) {
-            $0 + $1.solve()!
-        }*/
+        let stringArrays = InputHelper.stringArray(forDay: 8).map{ $0.components(separatedBy: CharacterSet(charactersIn: "| ")).filter{ !$0.isEmpty } }
+        let characterSetsArrays: [[Set<Character>]] = stringArrays.map { $0.map { Set($0) }}
+        displayPuzzles = characterSetsArrays.map{ DisplayPuzzle(signals: Array($0[0...9]), output: Array($0[10...13])) }
+        part1 = displayPuzzles.reduce(0) { $0 + $1.output.filter{ [2,3,4,7].contains($0.count) }.count }
+        var index = 0
+        part2 = displayPuzzles.reduce(0) { index += 1 ; print(index); return $0 + $1.solve() }
     }
     
     var view: AnyView {
-        return AnyView(Day8SolutionView(puzzle: displayPuzzles[0]))
-    }
-}
-
-// 0000
-//5    1
-//5    1
-// 6666
-//4    2
-//4    2
-// 3333
-
-struct Display {
-    let activeSegments: [Bool]
-    init(reading: String) {
-        var segments = [Bool]()
-        for char in "abcdefg" {
-            segments.append(reading.contains(char))
-        }
-        activeSegments = segments
-    }
-    var numberOfActiveSegments: Int {
-        return activeSegments.filter{ $0 == true }.count
-    }
-    func toValue(withMapping:[Int]) -> Int? {
-        let zero = Set([0,1,2,3,4,5])
-        let one = Set([1,2])
-        let two = Set([0,1,6,4,3])
-        let three = Set([0,1,6,2,3])
-        let four = Set([5,6,1,2])
-        let five = Set([0,5,6,2,3])
-        let six = Set([0,5,6,2,3,4])
-        let seven = Set([0,1,2])
-        let eight = Set([0,1,2,3,4,5,6])
-        let nine = Set([0,1,6,5,2,3])
-        let sets = [zero,one,two,three,four,five,six,seven,eight,nine]
-        var toCompare = Set<Int>()
-        for (index, bool) in activeSegments.enumerated() {
-            if bool {
-                toCompare.insert(withMapping[index])
-            }
-        }
-        let value = sets.firstIndex(of: toCompare)
-        return value
+        return AnyView(Text("Part 1: \(part1)\nPart 2: \(part2)"))
     }
 }
 
 struct DisplayPuzzle {
-    static let allMappings = Set(0...6).allPossibleArrays
-    let signals: [Display]
-    let displays: [Display]
-    func correctMapping() -> [Int]? {
-        for mapping in DisplayPuzzle.allMappings {
-            let signalNumbers = Set(signals.compactMap{ $0.toValue(withMapping: mapping )})
-            let displayNumbers = displays.compactMap{ $0.toValue(withMapping: mapping )}
-            if signalNumbers.count == 10 && displayNumbers.count == 4 {
-                return mapping
-            }
+    var signals: [Set<Character>]
+    var output: [Set<Character>]
+    
+    func solve() -> Int {
+        let allSignslsInOneString = signals.reduce("") { $0 + Array(arrayLiteral: $1).joined() }
+        let amountOfCharacter: [Character: Int] = allSignslsInOneString.reduce([Character: Int]()) {
+            var result = $0
+            result[$1] = (result[$1] ?? 0) + 1
+            return result
         }
-        return nil
-    }
-    func solve() -> Int? {
-        for mapping in DisplayPuzzle.allMappings {
-            let signalNumbers = Set(signals.compactMap{ $0.toValue(withMapping: mapping )})
-            let displayNumbers = displays.compactMap{ $0.toValue(withMapping: mapping )}
-            if signalNumbers.count == 10 && displayNumbers.count == 4 {
-                return displayNumbers.reduce(0) { $0 * 10 + $1 }
-            }
-        }
-        return nil
+        let allCharacters = "abcdefg"
+        let one = signals.first { $0.count == 2 }!
+        let four = signals.first { $0.count == 4 }!
+        let seven = signals.first { $0.count == 3 }!
+        let eight = signals.first { $0.count == 7 }!
+        let aMapping = allCharacters.first { amountOfCharacter[$0] == 8 && !one.contains($0) }!
+        let bMapping = allCharacters.first { amountOfCharacter[$0] == 6 }!
+        let cMapping = allCharacters.first { amountOfCharacter[$0] == 8 && one.contains($0) }!
+        let dMapping = allCharacters.first { amountOfCharacter[$0] == 7 && four.contains($0)}!
+        let eMapping = allCharacters.first { amountOfCharacter[$0] == 4 }!
+        let fMapping = allCharacters.first { amountOfCharacter[$0] == 9 }!
+        let gMapping = allCharacters.first { amountOfCharacter[$0] == 7 && !four.contains($0)}!
+        let two: Set = [aMapping, cMapping, dMapping, eMapping, gMapping]
+        let three: Set = [aMapping, cMapping, dMapping, fMapping, gMapping]
+        let five: Set = [aMapping, bMapping, dMapping, fMapping, gMapping]
+        let six: Set = [aMapping, bMapping, dMapping, eMapping, fMapping, gMapping]
+        let nine: Set = [aMapping, bMapping, cMapping, dMapping, fMapping, gMapping]
+        let zero: Set = [aMapping, bMapping, cMapping, eMapping, fMapping, gMapping]
+        
+        let numbers = [zero, one, two, three, four, five, six, seven, eight, nine]
+        
+        return output.reduce(0) { $0 * 10 + numbers.firstIndex(of: $1)! }
     }
 }
 
-extension Set where Element == Int {
-    var allPossibleArrays: [[Int]] {
-        return find(soFar: [])
-    }
-    
-    private func find(soFar: [Int] = []) -> [[Int]] {
-        let remaining = self.subtracting(soFar)
-        if remaining.count == 0 {
-            return [soFar]
-        } else {
-            var result = [[Int]]()
-            for i in remaining {
-                result += self.find(soFar: soFar + [i])
-            }
-            return result
-        }
-    }
-}
+//    0:      1:      2:      3:      4:
+//   aaaa    ....    aaaa    aaaa    ....
+//  b    c  .    c  .    c  .    c  b    c
+//  b    c  .    c  .    c  .    c  b    c
+//   ....    ....    dddd    dddd    dddd
+//  e    f  .    f  e    .  .    f  .    f
+//  e    f  .    f  e    .  .    f  .    f
+//   gggg    ....    gggg    gggg    ....
+//
+//    5:      6:      7:      8:      9:
+//   aaaa    aaaa    aaaa    aaaa    aaaa
+//  b    .  b    .  .    c  b    c  b    c
+//  b    .  b    .  .    c  b    c  b    c
+//   dddd    dddd    ....    dddd    dddd
+//  .    f  e    f  .    f  e    f  .    f
+//  .    f  e    f  .    f  e    f  .    f
+//   gggg    gggg    ....    gggg    gggg
+
+//  0: 6
+//  1: 2
+//  2: 5
+//  3: 5
+//  4: 4
+//  5: 5
+//  6: 6
+//  7: 3
+//  8: 7
+//  9: 6
+
+//  a: 8
+//  b: 6
+//  c: 8
+//  d: 7
+//  e: 4
+//  f: 9
+//  g: 7
