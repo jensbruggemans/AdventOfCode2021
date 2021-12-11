@@ -20,7 +20,7 @@ struct Day8: Solution {
         let characterSetsArrays: [[Set<Character>]] = stringArrays.map { $0.map { Set($0) }}
         displayPuzzles = characterSetsArrays.map{ DisplayPuzzle(signals: Array($0[0...9]), output: Array($0[10...13])) }
         part1 = displayPuzzles.reduce(0) { $0 + $1.output.filter{ [2,3,4,7].contains($0.count) }.count }
-        part2 = displayPuzzles.reduce(0) { return $0 + $1.solve() }
+        part2 = displayPuzzles.reduce(0) { $0 + $1.solve() }
     }
     
     var view: AnyView {
