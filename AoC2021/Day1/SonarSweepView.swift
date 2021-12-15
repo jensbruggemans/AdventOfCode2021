@@ -69,6 +69,7 @@ struct TextOverlay: View {
     var body: some View {
         ZStack {
             Text(text)
+                .font(.system(size: 18, weight: .bold, design: .monospaced))
                 .padding(6)
                 .foregroundColor(.white)
         }.background(Color.black)
