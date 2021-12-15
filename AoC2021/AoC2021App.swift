@@ -24,7 +24,8 @@ struct AoC2021App: App {
                                 Day11(),
 //                                Day12(), //needs optimising in debug mode
                                 Day13(),
-                               Day14()])
+                               Day14(),
+                               Day15()])
         }
     }
 }
