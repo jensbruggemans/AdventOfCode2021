@@ -25,6 +25,8 @@
 		B422A4CF27582D8200AD5512 /* InputHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B422A4CE27582D8200AD5512 /* InputHelper.swift */; };
 		B4268EDC2763F491004672ED /* day10.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4268EDB2763F491004672ED /* day10.txt */; };
 		B4268EDF2763F4BA004672ED /* Day10.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4268EDE2763F4BA004672ED /* Day10.swift */; };
+		B4278909276BDF2E00EF6FB1 /* day16.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4278908276BDF2E00EF6FB1 /* day16.txt */; };
+		B427890C276BE0BF00EF6FB1 /* Day16.swift in Sources */ = {isa = PBXBuildFile; fileRef = B427890B276BE0BF00EF6FB1 /* Day16.swift */; };
 		B43B938D2765011000BEF24D /* day11.txt in Resources */ = {isa = PBXBuildFile; fileRef = B43B938C2765011000BEF24D /* day11.txt */; };
 		B43B93902765013400BEF24D /* Day11.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43B938F2765013400BEF24D /* Day11.swift */; };
 		B4508595276566B10045949F /* Day2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4508594276566B10045949F /* Day2.swift */; };
@@ -78,6 +80,8 @@
 		B422A4CE27582D8200AD5512 /* InputHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputHelper.swift; sourceTree = "<group>"; };
 		B4268EDB2763F491004672ED /* day10.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day10.txt; sourceTree = "<group>"; };
 		B4268EDE2763F4BA004672ED /* Day10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10.swift; sourceTree = "<group>"; };
+		B4278908276BDF2E00EF6FB1 /* day16.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day16.txt; sourceTree = "<group>"; };
+		B427890B276BE0BF00EF6FB1 /* Day16.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day16.swift; sourceTree = "<group>"; };
 		B43B938C2765011000BEF24D /* day11.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = day11.txt; sourceTree = "<group>"; };
 		B43B938F2765013400BEF24D /* Day11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day11.swift; sourceTree = "<group>"; };
 		B4508594276566B10045949F /* Day2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				B4FCCF59276A5AD30099A492 /* Day14 */,
 				B4FCCF5E276A82300099A492 /* Day15 */,
 				B422A4C427580AB900AD5512 /* AoC2021.entitlements */,
+				B427890A276BE0AE00EF6FB1 /* Day16 */,
 				B422A4B627580AB200AD5512 /* AoC2021App.swift */,
 				B422A4BA27580AB300AD5512 /* Assets.xcassets */,
 				B422A4BC27580AB300AD5512 /* Preview Content */,
@@ -230,6 +235,7 @@
 				B40182D12767C25700583FE1 /* day13.txt */,
 				B4FCCF57276A5AAB0099A492 /* day14.txt */,
 				B4FCCF5C276A81D40099A492 /* day15.txt */,
+				B4278908276BDF2E00EF6FB1 /* day16.txt */,
 			);
 			path = Inputs;
 			sourceTree = "<group>";
@@ -240,6 +246,14 @@
 				B4268EDE2763F4BA004672ED /* Day10.swift */,
 			);
 			path = Day10;
+			sourceTree = "<group>";
+		};
+		B427890A276BE0AE00EF6FB1 /* Day16 */ = {
+			isa = PBXGroup;
+			children = (
+				B427890B276BE0BF00EF6FB1 /* Day16.swift */,
+			);
+			path = Day16;
 			sourceTree = "<group>";
 		};
 		B43B938E2765012000BEF24D /* Day11 */ = {
@@ -402,6 +416,7 @@
 				B456C3D7276130E700645B64 /* day8.txt in Resources */,
 				B409F3F8275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.xib in Resources */,
 				B422A4C9275811F200AD5512 /* day1.txt in Resources */,
+				B4278909276BDF2E00EF6FB1 /* day16.txt in Resources */,
 				B4FCCF5D276A81D40099A492 /* day15.txt in Resources */,
 				B4DA09212758D3C4006CBB8A /* day2.txt in Resources */,
 				B4AE9E6C275F4D6F0083E083 /* day7.txt in Resources */,
@@ -430,6 +445,7 @@
 				B422A4CD27582AF500AD5512 /* ColorExtensions.swift in Sources */,
 				B479BC472766956F0029D47A /* Day12.swift in Sources */,
 				B456C3DC276142F700645B64 /* Day8SolutionView.swift in Sources */,
+				B427890C276BE0BF00EF6FB1 /* Day16.swift in Sources */,
 				B4508595276566B10045949F /* Day2.swift in Sources */,
 				B4FF467D2762A09900F464DA /* Day9.swift in Sources */,
 				B409F3F7275CFCFC00AB5E85 /* ThermalVentCollectionViewCell.swift in Sources */,
